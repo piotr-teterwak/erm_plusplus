@@ -439,7 +439,7 @@ def main():
         )
         epoch = epoch + 1
 
-    acc1 = validate(val_loader, model, criterion, args)
+    acc1 = validate(val_loader, model, criterion, args, steps)
 
     # remember best acc@1 and save checkpoint
     is_best = acc1 > best_acc1
