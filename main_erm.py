@@ -557,10 +557,7 @@ def train(
             output = model.network(images)
             loss = criterion(output, target)
         # measure accuracy and record loss
-        if args.dataset == "wilds_camelyon":
-            max_k = 1
-        else:
-            max_k = 5
+        max_k = 5
         acc1, acc5 = accuracy(output, target, topk=(1, max_k))
         losses.update(loss.item(), images.size(0))
         top1.update(acc1[0], images.size(0))
@@ -641,10 +638,7 @@ def validate(val_loader, model, criterion, args, steps):
         loss = criterion(output, target)
 
         # measure accuracy and record loss
-        if args.dataset == "wilds_camelyon":
-            max_k = 1
-        else:
-            max_k = 5
+        max_k = 5
         acc1, acc5 = accuracy(output, target, topk=(1, max_k))
 
         losses.update(loss.item(), images.size(0))
