@@ -164,19 +164,19 @@ def construct_dataset(args, train_transform, val_transform):
             transform_dict[d] = val_transform
 
         art_dataset = datasets.ImageFolder(
-            os.path.joing(OFFICEHOME_PATH, "Art"),
+            os.path.join(OFFICEHOME_PATH, "Art"),
             transform=transform_dict["art"],
         )
         clipart_dataset = datasets.ImageFolder(
-            os.path.joing(OFFICEHOME_PATH, "Clipart"),
+            os.path.join(OFFICEHOME_PATH, "Clipart"),
             transform=transform_dict["clipart"],
         )
         product_dataset = datasets.ImageFolder(
-            os.path.joing(OFFICEHOME_PATH, "Product"),
+            os.path.join(OFFICEHOME_PATH, "Product"),
             transform=transform_dict["product"],
         )
         real_dataset = datasets.ImageFolder(
-            os.path.joing(OFFICEHOME_PATH, "Real"),
+            os.path.join(OFFICEHOME_PATH, "Real"),
             transform=transform_dict["real"],
         )
 
