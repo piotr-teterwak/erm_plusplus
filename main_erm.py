@@ -514,7 +514,6 @@ def train(
 
         steps = steps + 1
         # measure data loading time
-        data_time.update(time.time() - end)
         aux_images_list = []
         aux_target_list = []
         for idx, aux_iter in enumerate(aux_iter_list):
@@ -535,6 +534,9 @@ def train(
 
         images = torch.concat([images] + aux_images_list, dim=0)
         target = torch.concat([target] + aux_target_list)
+
+        data_time.update(time.time() - end)
+
         # compute output
         if args.miro:
             with torch.no_grad():
