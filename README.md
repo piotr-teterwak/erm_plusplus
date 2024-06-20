@@ -44,7 +44,7 @@ Modify the data paths in   ```data/dataset.py```, at the top of the file.
 
 An example, which splits off 20% of the training data for validation.
 ```sh
-python main_erm.py --save_name <SAVE_NAME> --dataset domainnet --training_data "clipart infograph real quickdraw sketch" --validation_data painting --sma --save_dir <SAVE_DIR> --steps  60000 --train-val-split 0.8 --lr 5e-5 --save-freq 1000 --linear-steps 500 --sma-start-iter 600 --arch resnet_timm_augmix
+python main_erm.py --save_name <SAVE_NAME> --dataset domainnet --training_data "clipart infograph real quickdraw sketch" --validation_data "clipart infograph real quickdraw sketch" --sma --save_dir <SAVE_DIR> --steps  60000 --train-val-split 0.8 --lr 5e-5 --save-freq 1000 --linear-steps 500 --sma-start-iter 600 --arch resnet_timm_augmix
 ```
 
 Then, find the number of steps corresponding to the highest (printed in the log) validation accuracy, and retrain on the full data:
